@@ -1,0 +1,20 @@
+.button {
+	padding: 10px;
+	float: left;	
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#white {
+	color: white;
+}
+
+#rectangle {
+	width: 100px;
+	text-align: center;
+}
+textarea {
+	 text-align: center;
+}
+

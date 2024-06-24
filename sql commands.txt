@@ -1,0 +1,34 @@
+create table runners (
+runner_id serial primary key,
+first_name varchar not null,
+last_name varchar not null);
+
+
+create table running_results (
+run_id serial,
+runner_id int,
+time time not null,
+distance numeric(5,2) check (distance > 0),
+primary key (run_id),
+constraint fk_runners
+foreign key(runner_id)
+references runners(runner_id)
+);
+
+insert into runners (first_name, last_name)
+values('Przemyslaw', 'Siolek');
+
+insert into running_results (runner_id, time, distance)
+values (1, '00:29:50', 5.00);
+
+create table run_detail (
+run_id int,
+max_hb int,
+avg_hb int,
+avg_cadence int,
+step_length int, 
+constraint fk_running_results
+foreign key(run_id)
+references running_results(run_id));
+
+
